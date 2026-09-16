@@ -1,0 +1,25 @@
+{
+  "name": "create-rust-app-website-danger",
+  "version": "1.0.0",
+  "description": "Danger automation for Create-Rust-App/website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Create-Rust-App/website.git"
+  },
+  "author": "ulises-jeremias",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Create-Rust-App/website/issues"
+  },
+  "homepage": "https://github.com/Create-Rust-App/website#readme",
+  "dependencies": {
+    "danger": "^14.0.7"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
