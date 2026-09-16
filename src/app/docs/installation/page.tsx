@@ -71,7 +71,7 @@ export default function InstallationPage() {
           <AlertTitle>Release binary via install script</AlertTitle>
           <AlertDescription>
             The recommended path today is the curl|sh installer (downloads a verified GitHub Release binary into{' '}
-            <code>~/.local/bin</code>). crates.io (<code>cargo install create-rust-app</code>) remains available when
+            <code>~/.local/bin</code>). crates.io (<code>cargo install create-awesome-rust-app</code>) remains available when
             the crate is published.
           </AlertDescription>
         </Alert>
@@ -172,7 +172,7 @@ export default function InstallationPage() {
                   <div>
                     <p className="text-sm font-medium mb-2">Install the CLI crate:</p>
                     <CopyButton
-                      command="cargo install create-rust-app"
+                      command="cargo install create-awesome-rust-app"
                       className="w-full justify-start font-mono text-sm bg-muted rounded-md px-4 py-3"
                     />
                   </div>

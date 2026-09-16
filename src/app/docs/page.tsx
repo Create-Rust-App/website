@@ -121,7 +121,7 @@ export default function DocsPage() {
               <TabsContent value="cargo" className="mt-2">
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm">
-                    <code>cargo install create-rust-app</code>
+                    <code>cargo install create-awesome-rust-app</code>
                   </pre>
                 </div>
               </TabsContent>
