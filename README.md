@@ -7,7 +7,7 @@
 [![Website](https://img.shields.io/badge/site-create--awesome--rust--app.vercel.app-B7410E?style=flat-square)](https://create-awesome-rust-app.vercel.app)
 [![CLI](https://img.shields.io/badge/CLI-create--rust--app-B7410E?style=flat-square)](https://github.com/Create-Rust-App/create-rust-app)
 [![Templates](https://img.shields.io/badge/templates-cra--templates-blue?style=flat-square)](https://github.com/Create-Rust-App/cra-templates)
-[![Release](https://img.shields.io/github/v/release/Create-Rust-App/create-rust-app?filter=create-rust-app%40*&style=flat-square&label=Release)](https://github.com/Create-Rust-App/create-rust-app/releases/tag/create-rust-app%400.1.0)
+[![Release](https://img.shields.io/github/v/release/Create-Rust-App/create-rust-app?filter=create-rust-app%40*&style=flat-square&label=Release)](https://github.com/Create-Rust-App/create-rust-app/releases/tag/create-rust-app%400.4.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Discord](https://img.shields.io/discord/1527933660764831825?style=flat-square&label=Discord&logo=discord&logoColor=white)](https://discord.gg/bR5VyATgka)
 
