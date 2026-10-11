@@ -39,7 +39,7 @@ jobs:
         run: npm ci
 
       - name: Run Danger
-        run: tools/danger/node_modules/.bin/danger ci --dangerfile tools/danger/dangerfile.ts --failOnErrors
+        run: tools/danger/node_modules/.bin/danger ci --dangerfile tools/danger/dangerfile.js --failOnErrors
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}

@@ -1,4 +1,4 @@
-import { danger, fail, message, TextDiff, warn } from 'danger';
+const { danger, fail, message, warn } = globalThis;
 
 const SMALL_PR_FILES = 10;
 const SMALL_PR_LINES = 200;
@@ -18,15 +18,7 @@ const checklistItems = [
   'I have checked my code and corrected any misspellings',
 ];
 
-// No PR is too small to include a description of why you made a change
-if (!danger.github.pr.body) {
-  const title = ':clipboard: Missing Summary';
-  const idea =
-    'Can you add a Summary? ' +
-    'To do so, add a `## Description` section to your PR description. ' +
-    'This is a good place to explain the motivation for making this change. Include a summary of the changes and the related issue, and list any dependencies that are required for this change.';
-  fail(`${title} - <i>${idea}</i>`);
-}
+const isDependabot = danger.github.pr.user?.login === 'dependabot[bot]';
 
 if (!danger.github.pr.title) {
   const title = ':id: Missing PR Title';
@@ -34,33 +26,45 @@ if (!danger.github.pr.title) {
   fail(`${title} - <i>${idea}</i>`);
 }
 
-// Function to check if a section exists in the PR body
-const hasSection = (section: string) => danger.github.pr.body.includes(section);
-
-// Function to check if a checklist item is checked in the PR body
-const isChecklistItemChecked = (item: string) => danger.github.pr.body.includes(`- [x] ${item}`);
-
-// Check for missing sections
-templateSections.forEach((section) => {
-  if (!hasSection(section)) {
-    fail(`:clipboard: Missing Section - Please include the section: <i>${section}</i> in your PR description.`);
+if (!isDependabot) {
+  // No PR is too small to include a description of why you made a change
+  if (!danger.github.pr.body) {
+    const title = ':clipboard: Missing Summary';
+    const idea =
+      'Can you add a Summary? ' +
+      'To do so, add a `## Description` section to your PR description. ' +
+      'This is a good place to explain the motivation for making this change. Include a summary of the changes and the related issue, and list any dependencies that are required for this change.';
+    fail(`${title} - <i>${idea}</i>`);
   }
-});
 
-// Check for missing or unchecked checklist items
-checklistItems.forEach((item) => {
-  if (!isChecklistItemChecked(item)) {
-    warn(`:clipboard: Unchecked Checklist Item - Please check the item: <i>${item}</i> in your PR description.`);
-  }
-});
+  // Function to check if a section exists in the PR body
+  const hasSection = (section) => danger.github.pr.body.includes(section);
+
+  // Function to check if a checklist item is checked in the PR body
+  const isChecklistItemChecked = (item) => danger.github.pr.body.includes(`- [x] ${item}`);
+
+  // Check for missing sections
+  templateSections.forEach((section) => {
+    if (!hasSection(section)) {
+      fail(`:clipboard: Missing Section - Please include the section: <i>${section}</i> in your PR description.`);
+    }
+  });
+
+  // Check for missing or unchecked checklist items
+  checklistItems.forEach((item) => {
+    if (!isChecklistItemChecked(item)) {
+      warn(`:clipboard: Unchecked Checklist Item - Please check the item: <i>${item}</i> in your PR description.`);
+    }
+  });
+}
 
 const touchedFiles = danger.git.created_files.concat(danger.git.modified_files);
 const allFiles = touchedFiles.concat(danger.git.deleted_files);
 
-const diffsList: Promise<(TextDiff | null)[]> = Promise.all(allFiles.map((p) => danger.git.diffForFile(p)));
+const diffsList = Promise.all(allFiles.map((p) => danger.git.diffForFile(p)));
 
 diffsList
-  .then((diffs) => diffs.filter(Boolean) as TextDiff[])
+  .then((diffs) => diffs.filter(Boolean))
   .then((diffs) => ({
     removed: diffs.reduce((lines, diff) => lines + diff.removed.split('\n').length, 0),
     added: diffs.reduce((lines, diff) => lines + diff.added.split('\n').length, 0),

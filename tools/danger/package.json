@@ -19,9 +19,6 @@
   "dependencies": {
     "danger": "^14.0.7"
   },
-  "devDependencies": {
-    "typescript": "^6.0.3"
-  },
   "overrides": {
     "undici": "^6.28.0",
     "braces": "https://codeload.github.com/micromatch/braces/tar.gz/28d440b5dd449dbf1fe6f3506cf94ecca4d02660"

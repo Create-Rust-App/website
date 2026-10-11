@@ -18,23 +18,23 @@ const features = [
 
 export function SaasAiBanner() {
   return (
-    <section className="w-full py-12 md:py-20 lg:py-28 relative overflow-hidden bg-gradient-to-br from-slate-950 via-violet-950/80 to-cyan-950/80">
+    <section className="w-full py-12 md:py-20 lg:py-28 relative overflow-hidden bg-linear-to-br from-slate-950 via-violet-950/80 to-cyan-950/80">
       <div className="absolute inset-0 z-0 opacity-40">
         <AnimatedGradient />
       </div>
       <div className="node-graph-bg absolute inset-0 z-0 opacity-20" />
-      <div className="absolute inset-0 bg-grid-white/5 bg-[size:30px_30px] [mask-image:radial-gradient(white,transparent_80%)] z-0" />
+      <div className="absolute inset-0 bg-grid-white/5 bg-size-[30px_30px] mask-[radial-gradient(white,transparent_80%)] z-0" />
 
       <div className="container px-4 md:px-6 relative z-10">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-4 py-1.5 text-sm font-medium text-violet-200 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-4 py-1.5 text-sm font-medium text-violet-200 backdrop-blur-xs">
               <span>⚡</span>
               <span>NEW · Flagship</span>
             </div>
 
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-violet-300 to-cyan-300 leading-tight">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-linear-to-r from-violet-300 to-cyan-300 leading-tight">
                 Web Server Starter
               </h2>
               <p className="text-lg text-slate-300 max-w-lg">
@@ -46,7 +46,7 @@ export function SaasAiBanner() {
               {features.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-sm hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-xs hover:bg-white/10 transition-colors"
                 >
                   <Icon className="h-3 w-3 text-violet-400 shrink-0" />
                   <span>{label}</span>
@@ -57,7 +57,7 @@ export function SaasAiBanner() {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-violet-500 to-cyan-600 hover:from-violet-400 hover:to-cyan-500 text-white shadow-lg shadow-violet-900/40 transition-all duration-300"
+                className="bg-linear-to-r from-violet-500 to-cyan-600 hover:from-violet-400 hover:to-cyan-500 text-white shadow-lg shadow-violet-900/40 transition-all duration-300"
                 asChild
               >
                 <Link href="/templates/web-server">Get Started →</Link>
@@ -65,7 +65,7 @@ export function SaasAiBanner() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-violet-400/30 bg-white/5 text-slate-200 hover:bg-white/10 hover:border-violet-400/50 backdrop-blur-sm transition-all duration-300"
+                className="border-violet-400/30 bg-white/5 text-slate-200 hover:bg-white/10 hover:border-violet-400/50 backdrop-blur-xs transition-all duration-300"
                 asChild
               >
                 <a href="https://github.com/Create-Rust-App/cra-templates" target="_blank" rel="noopener noreferrer">
@@ -76,7 +76,7 @@ export function SaasAiBanner() {
           </div>
 
           <div className="flex items-center justify-center">
-            <div className="w-full rounded-xl border border-violet-400/20 bg-slate-900/80 shadow-2xl shadow-violet-900/30 backdrop-blur-sm overflow-hidden">
+            <div className="w-full rounded-xl border border-violet-400/20 bg-slate-900/80 shadow-2xl shadow-violet-900/30 backdrop-blur-xs overflow-hidden">
               <div className="flex items-center gap-2 border-b border-white/10 bg-slate-800/60 px-4 py-3">
                 <div className="h-3 w-3 rounded-full bg-red-500/80" />
                 <div className="h-3 w-3 rounded-full bg-yellow-500/80" />

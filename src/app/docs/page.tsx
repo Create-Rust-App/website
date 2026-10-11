@@ -36,7 +36,7 @@ export default function DocsPage() {
               help developers quickly bootstrap projects with best practices and optimal configurations.
             </p>
 
-            <Card className="bg-gradient-to-r from-violet-500/10 via-violet-400/10 to-cyan-500/10 border-violet-500/20 hover:border-violet-500/40 transition-colors">
+            <Card className="bg-linear-to-r from-violet-500/10 via-violet-400/10 to-cyan-500/10 border-violet-500/20 hover:border-violet-500/40 transition-colors">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-yellow-400" />

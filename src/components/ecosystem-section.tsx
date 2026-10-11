@@ -143,7 +143,7 @@ export function EcosystemSection() {
           </div>
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             One philosophy.{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-violet-400 to-cyan-400 animate-gradient-text">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary via-violet-400 to-cyan-400 animate-gradient-text">
               Any language.
             </span>
           </h2>

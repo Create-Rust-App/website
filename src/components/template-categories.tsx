@@ -98,12 +98,12 @@ export function TemplateCategories({ categories }: TemplateCategoriesProps) {
             <CardHeader>
               <div className="flex items-center gap-2 mb-2">
                 <div
-                  className={`h-10 w-10 rounded-md bg-gradient-to-br ${colors.bg} flex items-center justify-center group-hover:${colors.hover} transition-all duration-300`}
+                  className={`h-10 w-10 rounded-md bg-linear-to-br ${colors.bg} flex items-center justify-center group-hover:${colors.hover} transition-all duration-300`}
                 >
                   {icon}
                 </div>
               </div>
-              <CardTitle className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-cyan-500 transition-all duration-300">
+              <CardTitle className="group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-primary group-hover:to-cyan-500 transition-all duration-300">
                 {category.name}
               </CardTitle>
               <CardDescription>{category.description}</CardDescription>
@@ -114,7 +114,7 @@ export function TemplateCategories({ categories }: TemplateCategoriesProps) {
             <CardFooter>
               <Button
                 variant="outline"
-                className={`w-full backdrop-blur-sm bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300 group-hover:${colors.border}`}
+                className={`w-full backdrop-blur-xs bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300 group-hover:${colors.border}`}
                 asChild
               >
                 <Link href={`/templates?category=${category.slug}`}>

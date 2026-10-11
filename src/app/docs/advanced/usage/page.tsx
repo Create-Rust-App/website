@@ -181,16 +181,17 @@ create-rust-app cache doctor`}</pre>
             <DiagramWorkflow
               className="mt-4"
               title="Deployment Workflow"
-              chart={`
-graph TD
-    A["Developer Pushes Code"] --> B["CI Pipeline Triggered"]
-    B --> C["rust-toolchain installs Rust"]
-    C --> D["cargo fmt --check / cargo clippy"]
-    C --> E["cargo test"]
-    D --> F["Build Binary"]
-    E --> F
-    F --> G["Deploy Artifact"]
-`}
+              stages={[
+                { steps: [{ label: 'Developer Pushes Code' }] },
+                { steps: [{ label: 'CI Pipeline Triggered' }] },
+                { steps: [{ label: 'rust-toolchain installs Rust' }] },
+                {
+                  label: 'Checks',
+                  steps: [{ label: 'cargo fmt --check / cargo clippy' }, { label: 'cargo test' }],
+                },
+                { steps: [{ label: 'Build Binary' }] },
+                { steps: [{ label: 'Deploy Artifact' }] },
+              ]}
             />
           </section>
 

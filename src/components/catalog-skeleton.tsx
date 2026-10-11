@@ -15,7 +15,7 @@ function CatalogSkeletonCard() {
   return (
     <Card
       aria-hidden="true"
-      className="flex h-full flex-col overflow-hidden border-l-4 border-primary/10 bg-card/70 backdrop-blur-sm"
+      className="flex h-full flex-col overflow-hidden border-l-4 border-primary/10 bg-card/70 backdrop-blur-xs"
     >
       <CardHeader className="pb-2">
         <div className="mb-2 flex items-center gap-2">

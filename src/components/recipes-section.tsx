@@ -92,7 +92,7 @@ export function RecipesSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Popular recipes</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-violet-500">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-linear-to-r from-primary to-violet-500">
               Choose a path. Ship faster.
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
@@ -111,7 +111,7 @@ export function RecipesSection() {
               >
                 <div className="flex-1 space-y-3 min-w-0">
                   <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 shrink-0 rounded-md bg-gradient-to-br from-violet-500/20 to-cyan-600/20 flex items-center justify-center">
+                    <div className="h-10 w-10 shrink-0 rounded-md bg-linear-to-br from-violet-500/20 to-cyan-600/20 flex items-center justify-center">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>

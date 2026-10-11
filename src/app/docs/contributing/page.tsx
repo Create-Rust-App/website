@@ -39,15 +39,15 @@ export default function ContributingPage() {
 
             <DiagramWorkflow
               title="Contribution Workflow"
-              chart={`
-graph TD
-    A["Fork Repository"] --> B["Create New Template/Extension"]
-    B --> C["Add Entry to templates.json"]
-    C --> D["Test Locally"]
-    D --> E["Create Pull Request"]
-    E --> F["Review Process"]
-    F --> G["Merged!"]
-              `}
+              stages={[
+                { steps: [{ label: 'Fork Repository' }] },
+                { steps: [{ label: 'Create New Template/Extension' }] },
+                { steps: [{ label: 'Add Entry to templates.json' }] },
+                { steps: [{ label: 'Test Locally' }] },
+                { steps: [{ label: 'Create Pull Request' }] },
+                { steps: [{ label: 'Review Process' }] },
+                { steps: [{ label: 'Merged!' }] },
+              ]}
             />
           </section>
 
