@@ -8,6 +8,7 @@ on:
 
   # Run this workflow on pull request to main
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     branches:
       - main
 
