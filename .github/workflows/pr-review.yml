@@ -7,6 +7,7 @@ concurrency:
 on:
   # Run this workflow on pull request to main
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     branches:
       - main
 
@@ -26,11 +27,11 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version-file: .node-version
 
@@ -39,7 +40,8 @@ jobs:
         run: npm ci
 
       - name: Run Danger
-        run: tools/danger/node_modules/.bin/danger ci --dangerfile tools/danger/dangerfile.js --failOnErrors
+        run: tools/danger/node_modules/.bin/danger ci --dangerfile tools/danger/dangerfile.ts --failOnErrors
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          DANGER_DISABLE_TRANSPILATION: 'true'
