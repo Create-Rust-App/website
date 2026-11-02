@@ -32,6 +32,7 @@
     "axum",
     "clippy",
     "crates",
+    "estree",
     "ndarray",
     "rustc",
     "rustup",
